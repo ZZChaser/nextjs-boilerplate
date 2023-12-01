@@ -19,7 +19,7 @@ export function Header() {
           Log in
         </Link>
       ) : (
-        <Link href="/user">
+        <Link href="/users">
           {user.name} ({products.length})
         </Link>
       )}
