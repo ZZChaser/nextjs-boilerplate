@@ -13,8 +13,8 @@ export function Toppings({ toppings }: ToppingsProps) {
       {toppings.map((topping) => (
         <li key={topping}>
           {ingredients[topping]}{' '}
-          {!!user && hasPreference(user, topping) && <>👍</>}{' '}
-          {!!user && hasAllergy(user, topping) && <>⚠️</>}
+          {!!user && hasPreference(user as unknown as User, topping) && <>👍</>}{' '}
+          {!!user && hasAllergy(user as unknown as User, topping) && <>⚠️</>}
         </li>
       ))}
     </ul>
