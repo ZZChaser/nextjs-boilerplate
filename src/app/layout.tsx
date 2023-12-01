@@ -4,6 +4,7 @@ import './globals.css';
 import { Header } from '../components/Header';
 import { UserContextProvider } from '../stores/user';
 import { CartContextProvider } from '@/stores/cart';
+import { OrderContextProvider } from '@/stores/order';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,8 +23,10 @@ export default function RootLayout({
       <body className={inter.className + ' p-5 pt-20'}>
         <UserContextProvider>
           <CartContextProvider>
-            <Header />
-            {children}
+            <OrderContextProvider>
+              <Header />
+              {children}
+            </OrderContextProvider>
           </CartContextProvider>
         </UserContextProvider>
       </body>
