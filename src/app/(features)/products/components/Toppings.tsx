@@ -1,6 +1,10 @@
-import { useUserContext } from '@/stores/user';
+import {
+  User,
+  hasAllergy,
+  hasPreference,
+  useUserContext,
+} from '@/features/users';
 import { Ingredient, ingredients } from '..';
-import { User, hasAllergy, hasPreference } from '@/features/users';
 
 type ToppingsProps = {
   toppings: Ingredient[];

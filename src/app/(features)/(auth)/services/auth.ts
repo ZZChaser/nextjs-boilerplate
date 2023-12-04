@@ -1,6 +1,14 @@
+import { User } from '@/features/users';
+
 export async function register() {}
 
-export async function login({ name, email }: { name: string; email: string }) {
+export async function login({
+  name,
+  email,
+}: {
+  name: string;
+  email: string;
+}): Promise<User> {
   return {
     name,
     email,

@@ -1,10 +1,10 @@
 'use client';
 
-import { useUserContext } from '@/stores/user';
-import { Orders } from './components/Orders';
-import Profile from './components/Profile';
 import { redirect } from 'next/navigation';
+import { useUserContext } from '@/features/users';
+import { Buy, Orders } from '@/features/orders';
 import { Cart } from '@/features/carts';
+import Profile from './components/Profile';
 
 export default function User() {
   const { user } = useUserContext();
@@ -23,7 +23,7 @@ export default function User() {
       />
       <Orders />
       <Cart />
-      {/* <Buy /> */}
+      <Buy />
     </section>
   );
 }

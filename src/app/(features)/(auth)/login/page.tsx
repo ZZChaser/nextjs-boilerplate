@@ -1,6 +1,6 @@
 'use client';
 
-import { useUserContext } from '@/stores/user';
+import { useUserContext } from '@/features/users/stores/user';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { login } from '../services/auth';
@@ -10,8 +10,8 @@ export default function Login() {
   const [email, setEmail] = useState<string>('');
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-
   const { user, setUser } = useUserContext();
+
   if (!!user) {
     // TODO:
   }

@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useUserContext } from '../stores/user';
-import { useCartContext } from '@/stores/cart';
+import { useUserContext } from '@/features/users';
+import { useCartContext } from '@/features/carts';
 
 export function Header() {
   const { user } = useUserContext();

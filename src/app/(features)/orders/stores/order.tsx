@@ -1,6 +1,5 @@
 'use client';
 
-import { Order } from '@/app/(features)/orders';
 import {
   Dispatch,
   ReactNode,
@@ -9,6 +8,7 @@ import {
   useContext,
   useState,
 } from 'react';
+import type { Order } from '..';
 
 type OrderContext = {
   orders: Order[];

@@ -1,14 +1,7 @@
 'use client';
 
-import { Ingredient } from '@/app/(features)/products';
 import { ReactNode, createContext, useContext, useState } from 'react';
-
-interface User {
-  name: string;
-  email: string;
-  allergies: Ingredient[];
-  preferences: Ingredient[];
-}
+import type { User } from '..';
 
 type UserContext = {
   user: User | null;

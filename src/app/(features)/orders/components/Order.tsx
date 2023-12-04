@@ -1,8 +1,4 @@
-type Order = {
-  created: string;
-  total: number;
-  status: string;
-};
+import { Order } from '..';
 
 export default function Order(props: Order) {
   return (

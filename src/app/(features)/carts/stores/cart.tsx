@@ -1,10 +1,10 @@
 'use client';
 
-import { Product } from '@/app/(features)/products';
+import { Product } from '@/features/products';
 import { ReactNode, createContext, useContext, useState } from 'react';
+import { Cart } from '../types';
 
-type CartContext = {
-  products: Product[];
+type CartContext = Cart & {
   addProduct: (product: Product) => void;
   emptyCart: () => void;
 };

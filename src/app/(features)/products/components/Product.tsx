@@ -1,14 +1,12 @@
-import { contains } from '@/features/carts';
-import { Toppings } from './Toppings';
-import { User, hasAllergy } from '@/features/users';
-import { useUserContext } from '@/stores/user';
-import { useCartContext } from '@/stores/cart';
+import { User, hasAllergy, useUserContext } from '@/features/users';
+import { useCartContext, contains } from '@/features/carts';
 import { Product } from '../types/product';
+import { Toppings } from './Toppings';
 
 type ProductProps = Product;
 
-const Product: React.FC<ProductProps> = (props) => {
-  const { title, price, toppings } = props;
+const Product: React.FC<ProductProps> = (product) => {
+  const { title, price, toppings } = product;
 
   const { user } = useUserContext();
   const cart = useCartContext();
@@ -33,13 +31,13 @@ const Product: React.FC<ProductProps> = (props) => {
         <button
           className="bg-gray-200 px-2 rounded border border-gray-500 mt-2"
           type="button"
-          onClick={() => handleAddToCart(user as unknown as User, props)}
+          onClick={() => handleAddToCart(user as unknown as User, product)}
         >
           {price / 100} ₽
         </button>
       )}
 
-      {contains(cart, props) && <span className=" ml-1">In your cart</span>}
+      {contains(cart, product) && <span className=" ml-1">In your cart</span>}
     </article>
   );
 };

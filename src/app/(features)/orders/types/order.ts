@@ -1,4 +1,4 @@
-import type { Cart } from '@/features/carts';
+import type { Cart } from '@/features/carts/types';
 
 export type OrderStatus = 'new' | 'delivery' | 'completed';
 
